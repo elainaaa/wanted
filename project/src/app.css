@@ -19,7 +19,7 @@ nav.nav-box{display:inline-block; position:relative; width:50%; height:50px; mar
 .nav-box ul{display:table; table-layout:fixed; width:100%;}
 .nav-box li{display:table-cell; list-style:none; position:relative; text-align:center;}
 .nav-box li a{display:block; height:50px; padding:.73em 0; color:#000; box-sizing:border-box;}
-.nav-box li.active a{border-bottom:4px solid darkorchid;}
+.nav-box li.active a{border-bottom:4px solid #258bf7;}
 .login-member-col{display:inline-block; margin-left:7em; box-sizing:border-box;}
 .login-member-col li{display:inline-block;}
 .login-member-col li:after{content:'/'; display:inline-block; margin:0 .5em;}
