@@ -35,8 +35,15 @@ nav.nav-box{display:inline-block; position:relative; width:50%; height:50px; mar
 .sub-list.active{display:block; position:absolute; top:3.1em; left:0; width:100%; padding:1em 0 2em; background-color:#fff; text-align:center;}
 .sub-list li a{color:#000;}
 
-
 .main-visual-col{display:block; width:100%; height:300px; background:url(https://wanted-marketing-image.s3.ap-northeast-2.amazonaws.com/service_introduction/event_list_banner/Global_Web_Event_Banner_A_20210215.jpg) no-repeat 50% 0; text-indent:-9999px;}
+.main-visual-col .inner-col{display:block; width:100%; height:100%;}
+
+.user-info-col{display:none;}
+.user-info-col.active{display:block;}
+.user-info-col .inner-col{width:900px; margin:0 auto;}
+.user-info-col ul{width:100%; margin-top:1em;}
+.user-info-col ul li{margin-bottom:1em; box-shadow:.2em .2em .5em rgba(0,0,0,.2);}
+
 
 /* 데스크탑 */
 .category {width:80%; max-width:1060px; margin:0 auto;}

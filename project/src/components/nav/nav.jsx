@@ -32,7 +32,6 @@ class Nav extends Component {
                     onMouseLeave={()=> {this.setState({menu4: false});}}>MathUp</a></li>
                 </ul>
             </nav>
-                {/* {this.state.isHovering ? <SubNav /> : ''} */}
                 <SubNav subNav={this.state} />
             </>
         );

@@ -2,21 +2,13 @@ import React, { Component } from 'react';
 
 class SubNavList extends Component {
     render() {
-        const {desc} = this.props.item;
+        const subList = this.props.sublist;
         return (
-            // <li className="sub-item">
-            //     <a href="#">
-            //         {desc[i]}
-            //     </a>
-            // </li>
-            
-            this.props.item.map(items => (
-                <li className="sub-item">
-                    <a href="#">
-                        {items.desc}
-                    </a>
-                </li>
-            ))
+            <li className="sub-item">
+                <a href="#">
+                    {subList.desc}
+                </a>
+            </li>
         );
     }
 }
