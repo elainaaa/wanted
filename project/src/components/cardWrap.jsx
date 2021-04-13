@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import CardList from "./cardList"
 
 class CardWrap extends Component {
-    render() {
+    render () {
         return (
             <div className="card-wrap">
-                <CardList></CardList>
+                <CardList />
             </div>
         );
     }

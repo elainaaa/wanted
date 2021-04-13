@@ -1,46 +1,49 @@
 import React, {Component} from 'react';
 import CardItem from "./cardItem"
-import arrayData from "../data/arrayData.json";
-
+// import arrayData from "../data/arrayData.json"
+import axios from "axios";
 class CardList extends Component {
-    render() {
-        console.log("arrayData: ", typeof arrayData);
-        console.log(arrayData);
-
-        const newArrayData = arrayData.map((item, index) => {
-            return (
-                <li key={index}>
-                    <a href={item.link} target="_blank">
-                        <div className="picture" style={{backgroundImage: `url(` + item.picture + `)`}}/>
-                        <div className="info">
-                            <div className="flag">
-                                <span>{item.flag}</span>
-                                <span>{item.flag2}</span>
-                            </div>
-                            <h3>{item.title}</h3>
-                            <span className="date">{item.date}</span>
-                            <div className="category">
-                                <span>{item.category}</span>
-                                <span>{item.category2}</span>
-                                <span>{item.category3}</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            );
-        });
-
+    state = {
+        ItemList: []  // 비어있는 배열
+    };
+    loadItem = () => {
+        axios
+            .get("https://my-json-server.typicode.com/typicode/demo/posts")
+            .then(({ data }) => {
+                console.log('aaaaaa',data)
+                this.setState({
+                    ItemList: data
+                });
+            })
+            .catch(e => {  // API 호출이 실패한 경우
+                console.error(e);  // 에러표시
+            });
+    };
+    componentDidMount() {
+        this.loadItem();  // loadItem 호출
+    }
+    render () {
+        const { ItemList } = this.state;
+        console.log(ItemList);
         return (
             <>
                 <h2>All</h2>
                 <ul>
-                    {newArrayData}
-                    <CardItem></CardItem>
+                    {
+                        ItemList && ItemList.length > 0 && (
+                            ItemList.map((item,idx) => {
+                                console.log(item)
+                                return (
+                                    <React.Fragment key={idx}>
+                                        <CardItem data={item}/>
+                                    </React.Fragment>
+                                )
+                            })
+                        )
+                    }
                 </ul>
             </>
-        )
+        );
     }
 }
-
-
 export default CardList;
