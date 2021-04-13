@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CardItem from "./cardItem"
-// import arrayData from "../data/arrayData.json"
+import arrayData from "../data/arrayData.json"
 import axios from "axios";
 class CardList extends Component {
     state = {
@@ -30,8 +30,8 @@ class CardList extends Component {
                 <h2>All</h2>
                 <ul>
                     {
-                        ItemList && ItemList.length > 0 && (
-                            ItemList.map((item,idx) => {
+                        arrayData && arrayData.length > 0 && (
+                            arrayData.map((item,idx) => {
                                 console.log(item)
                                 return (
                                     <React.Fragment key={idx}>
@@ -41,6 +41,19 @@ class CardList extends Component {
                             })
                         )
                     }
+
+                    {/*{*/}
+                    {/*    ItemList && ItemList.length > 0 && (*/}
+                    {/*        ItemList.map((item,idx) => {*/}
+                    {/*            console.log(item)*/}
+                    {/*            return (*/}
+                    {/*                <React.Fragment key={idx}>*/}
+                    {/*                    <CardItem data={item}/>*/}
+                    {/*                </React.Fragment>*/}
+                    {/*            )*/}
+                    {/*        })*/}
+                    {/*    )*/}
+                    {/*}*/}
                 </ul>
             </>
         );
