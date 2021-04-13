@@ -4,55 +4,36 @@ import SubNav from './subNav';
 class Nav extends Component {
     constructor(props) {
         super(props);
-        this.handleMouseHover = this.handleMouseHover.bind(this);
         this.state = {
-            isHovering: false,
+            menu1: false,
+            menu2: false,
+            menu3: false,
+            menu4: false,
         }
     }
 
-    handleMouseHover (e) {
-        this.setState({
-            isHovering: !this.state.isHovering
-        });
-        const subNav = document.querySelectorAll('.nav-list');
-
-        subNav.forEach(function(e){
-            e.addEventListener('mouseover', activeNav);
-            e.addEventListener('mouseleave', function(){
-                subNav.forEach(function(e){
-                    e.classList.remove('active');
-                })
-            });
-        })
-
-        function activeNav(e) {
-            let currentNav = e.currentTarget;
-
-            subNav.forEach(function(e){
-                e.classList.remove('active');
-            })
-            currentNav.classList.add('active');
-        };
-    }
-
-    handleNavActive (e) {
-        
-    }
-
     render() {
+
         return (
             <>
             <nav className="nav-box">
                 <ul>
-                    <li className="nav-list"><a href="#" onMouseOver={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>All Jobs</a></li>
-                    <li className="nav-list"><a href="#" onMouseOver={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>Events</a></li>
-                    <li className="nav-list"><a href="#" onMouseOver={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>Resume</a></li>
-                    <li className="nav-list"><a href="#" onMouseOver={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>MathUp</a></li>
+                    <li className={this.state.menu1 ? "nav-list active" : "nav-list"}><a href="#"
+                     onMouseOver={()=> {this.setState({menu1: true});}} 
+                    onMouseLeave={()=> {this.setState({menu1: false});}}>All Jobs</a></li>
+                    <li className={this.state.menu2 ? "nav-list active" : "nav-list"}><a href="#"
+                     onMouseOver={()=> {this.setState({menu2: true});}} 
+                    onMouseLeave={()=> {this.setState({menu2: false});}}>Events</a></li>
+                    <li className={this.state.menu3 ? "nav-list active" : "nav-list"}><a href="#"
+                     onMouseOver={()=> {this.setState({menu3: true});}} 
+                    onMouseLeave={()=> {this.setState({menu3: false});}}>Resume</a></li>
+                    <li className={this.state.menu4 ? "nav-list active" : "nav-list"}><a href="#"
+                     onMouseOver={()=> {this.setState({menu4: true});}} 
+                    onMouseLeave={()=> {this.setState({menu4: false});}}>MathUp</a></li>
                 </ul>
-                
             </nav>
-            {this.state.isHovering ? <SubNav /> : ''}
-            
+                {/* {this.state.isHovering ? <SubNav /> : ''} */}
+                <SubNav subNav={this.state} />
             </>
         );
     }
