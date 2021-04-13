@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 class Category extends Component {
-    render() {
+    render () {
         const settings = {
             dots:false,
             infinite: true,
@@ -67,13 +67,6 @@ class Category extends Component {
         );
     }
 }
-// class Category extends Component {
-//     render() {
-//         return (
-
-//         )
-//     }
-// }
 
 
 export default Category;

@@ -1,26 +1,35 @@
 import React, {Component} from 'react';
 
 class CardItem extends Component {
-    render() {
+    constructor(props) {
+        super(props);
+    }
+    render () {
         return (
             <li>
-                <a href="">
-                    <img src="https://static.wanted.co.kr/images/events/1194/1376b925.jpg" className="picture" alt=""/>
-                    <div className="info">
-                        <div>
-                            <span>online</span>
-                            <span>event</span>
-                        </div>
-                        <h3>How to Land a job in big Tech</h3>
-                        <span>Tuesday, 13 Apr 2021</span>
-                        <div>
-                            <span>#Tech / It</span>
-                            <span>#Jobs</span>
-                            <span>#Talk</span>
-                        </div>
-                    </div>
-                </a>
+                <div>{this.props.data.id}</div>
+                <div>{this.props.data.title}</div>
             </li>
+            // <li>{this.props.data.title}</li>
+            // <li>
+            //     <a href={this.props.data.link}>
+            //         <div className="picture" style={{backgroundImage: `url(` + this.props.data.picture + `)`}}/>
+            //         <div className="info">
+            //             <div className="flag">
+            //                 <span>{this.props.data.flag}</span>
+            //                 <span>{this.props.data.flag2}</span>
+            //             </div>
+            //             <h3>{this.props.data.title}</h3>
+            //             <span className="date">{this.props.data.date}</span>
+            //             <div className="category">
+            //                 <span>{this.props.data.category}</span>
+            //                 <span>{this.props.data.category2}</span>
+            //                 <span>{this.props.data.category3}</span>
+            //             </div>
+            //         </div>
+            //     </a>
+            // </li>
+
         );
     }
 }
