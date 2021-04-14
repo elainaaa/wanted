@@ -52,6 +52,7 @@ nav.nav-box{display:inline-block; position:relative; width:50%; height:50px; mar
 .slick-prev, .slick-next{background:none; }
 .slick-prev:before, .slick-next:before {color:#000;}
 .slick-slide > div {padding-right:10px;}
+.slick-slide img{margin:0 auto;}
 .card-wrap {position:relative; width:90%; max-width:1060px; margin:0 auto; padding:0 0 60px; box-sizing: border-box}
 
 .card-wrap h2 {margin:60px 0 20px; font-size: 22px; font-weight: 900; line-height: 1.46; word-wrap: break-word; color: #333;}
