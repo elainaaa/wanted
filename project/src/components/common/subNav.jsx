@@ -36,7 +36,7 @@ class SubNav extends Component {
         const subNav = this.props.subNav;
         return (
             <>
-                <ul id="sub-1" className={subNav.menu1 ? "sub-list active" : "sub-list"} onMouseOver={()=> {this.setState({menu4: true});}}>
+                <ul id="sub-1" className={subNav.menu1 ? "sub-list active" : "sub-list"}>
                     {
                         this.state.sub1.map(sublist => (
                             <SubNavList key={sublist.id} sublist={sublist}/>
