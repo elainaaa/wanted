@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
-class InfoList extends Component {
+class FetchInfoList extends Component {
     render() {
-        const list = this.props.userinfo;
+        const list = this.props.fetchuserinfo;
         return (
             <li>
                 <p><strong>Name</strong> : {list.name}</p>
                 <p><strong>Email</strong> : {list.email}</p>
-                <p>{list.postId}</p>
             </li>
         );
     }
 }
 
-export default InfoList;
+export default FetchInfoList;

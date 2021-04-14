@@ -8,7 +8,8 @@ class Visual extends Component {
         this.handleShow = this.handleShow.bind(this);
         this.state= {
             infoList: [],
-            showInfo: false
+            showInfo: false,
+            fetchInfoList: []
         }
     }
 
@@ -25,8 +26,28 @@ class Visual extends Component {
             });
     };
 
+    fetchInfo() {
+        // fetch('https://jsonplaceholder.typicode.com/posts/2/comments', {
+        //     method: 'post',
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //     }
+        // })
+        fetch('https://jsonplaceholder.typicode.com/posts/2/comments')
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    fetchInfoList: response
+                });
+            })
+            .catch(e => {
+                console.log(e);
+            });
+    }
+
     componentDidMount() {
         this.loadInfo();
+        this.fetchInfo();
     }
 
     handleShow = () => {
@@ -37,7 +58,9 @@ class Visual extends Component {
 
     render() {
         const infoList = this.state.infoList;
+        const fetchList = this.state.fetchInfoList;
         // console.log(infoList)
+        // console.log(fetchList)
         return (
             <>
             <div className="main-visual-col" onClick={this.handleShow}>
@@ -49,6 +72,7 @@ class Visual extends Component {
                 <div className="inner-col">
                     <h3>Axios</h3>
                     <UserWrap infoList={infoList}/>
+                    {/* <h3>Fetch</h3> */}
                 </div>
            </div>
            
