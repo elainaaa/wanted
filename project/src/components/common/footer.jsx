@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import footerLogo from '../static/img_footer_logo.png';
+import footerLogo from '../../static/img_footer_logo.png';
 class Footer extends Component {
     render() {
         return (

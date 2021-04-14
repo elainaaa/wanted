@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Header from './components/header';
-import Visual from './components/visual';
-import VisualSlide from './components/visualSlide';
-import Category from "./components/category";
-import CardWrap from "./components/cardWrap";
-import Footer from './components/footer';
+import Header from './components/common/header';
+import Visual from './components/contents/visual';
+import VisualSlide from './components/contents/visualSlide';
+import Category from "./components/contents/category";
+import CardWrap from "./components/contents/cardWrap";
+import Footer from './components/common/footer';
 
 import './app.css';
 class App extends Component {

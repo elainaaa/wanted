@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Login from './login';
-import Nav from './nav/nav';
-import headerLogo from '../static/img_header_logo.png';
+import Nav from './nav';
+import headerLogo from '../../static/img_header_logo.png';
 
 class Header extends Component {
     render() {
