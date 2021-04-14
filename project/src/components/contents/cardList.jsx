@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import CardItem from "./cardItem"
-// import arrayData from "../data/arrayData.json"
+// import arrayData from "../../data/arrayData.json"
 import axios from "axios";
 class CardList extends Component {
-    state = {
-        ItemList: []  // 비어있는 배열
-    };
-    loadItem = () => {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ItemList: []
+        }
+    }
+
+    loadItem () {
         axios
-            .get("https://my-json-server.typicode.com/typicode/demo/posts")
+            .get("https://english.yanadoocdn.com/upload/yanadoo/pc/pilot/arrayData.json")
             .then(({ data }) => {
                 console.log('aaaaaa',data)
                 this.setState({
@@ -34,9 +38,7 @@ class CardList extends Component {
                             ItemList.map((item,idx) => {
                                 console.log(item)
                                 return (
-                                    <React.Fragment key={idx}>
-                                        <CardItem data={item}/>
-                                    </React.Fragment>
+                                    <CardItem data={item} key={idx}/>
                                 )
                             })
                         )

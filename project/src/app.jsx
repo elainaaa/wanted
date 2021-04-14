@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import Header from './components/header';
-import Visual from './components/visual';
-import Category from "./components/category"
-import CardWrap from "./components/cardWrap"
+import Header from './components/common/header';
+import Visual from './components/contents/visual';
+import VisualSlide from './components/contents/visualSlide';
+import Category from "./components/contents/category";
+import CardWrap from "./components/contents/cardWrap";
+import Footer from './components/common/footer';
+
 import './app.css';
 class App extends Component {
     render() {
@@ -10,12 +13,10 @@ class App extends Component {
         <>
             <Header />
             <Visual />
-            <div className="App">
-                <div style = {{ paddingTop : 60 , paddingBottom: 60}}>
-                    <Category />
-                    <CardWrap />
-                </div>
-            </div>
+            <VisualSlide />
+            <Category />
+            <CardWrap />
+            <Footer />
         </>
       );
     }
