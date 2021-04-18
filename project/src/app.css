@@ -49,9 +49,9 @@ nav.nav-box{display:inline-block; position:relative; width:50%; height:50px; mar
 .category {width:80%; max-width:1060px; margin:0 auto; padding:60px 0 0;}
 .category .slick-list button {width:100%; height: 50px;padding:0 20px;border: 1px solid transparent;border-radius: 5px;background-color: #f2f4f7;font-size: 15px;}
 .category .slick-list button:hover {background:#fff; color:#000; border:1px solid #000}
-.slick-prev, .slick-next{background:none; }
-.slick-prev:before, .slick-next:before {color:#000;}
-.slick-slide > div {padding-right:10px;}
+.category .slick-prev,.category  .slick-next{background:none; }
+.category .slick-prev:before,.category .slick-next:before {color:#000;}
+.category .slick-slide > div {padding-right:10px;}
 .slick-slide img{margin:0 auto;}
 .card-wrap {position:relative; width:90%; max-width:1060px; margin:0 auto; padding:0 0 60px; box-sizing: border-box}
 
@@ -68,8 +68,10 @@ nav.nav-box{display:inline-block; position:relative; width:50%; height:50px; mar
 .card-wrap ul li a .info .category span {font-size:11px}
 .card-wrap ul li a .picture {position:relative; width:100%; height:0; padding:0 0 70%; background-position:center; background-size:cover; background-color:#ddd }
 
+
 .visual-col .slick-arrow {display:none !important}
 .visual-col .slick-dots {bottom:30px}
+.visual-col a {display:block;}
 footer {padding:30px 0 70px; background:#2b2b2b;}
 footer .inner-col {width:80%; max-width:1060px; margin:0 auto;}
 footer .inner-col:after {display:block; content:''; clear:both;}

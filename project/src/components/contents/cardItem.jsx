@@ -6,18 +6,9 @@ class CardItem extends Component {
     }
     render () {
         return (
-            // <li>
-            //     <div>{this.props.data.id}</div>
-            //     <div>{this.props.data.title}</div>
-            // </li>
-
-
-
-            // <li>{this.props.data.title}</li>
-
             <li>
                 <a href={this.props.data.link}>
-                    <div className="picture" style={{backgroundImage: `url(` + this.props.data.picture + `)`}}/>
+                    <div className="picture" style={{backgroundImage: `url(` + this.props.data.picture + `)`}} />
                     <div className="info">
                         <div className="flag">
                             <span>{this.props.data.flag}</span>

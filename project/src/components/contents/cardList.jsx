@@ -14,13 +14,13 @@ class CardList extends Component {
         axios
             .get("https://english.yanadoocdn.com/upload/yanadoo/pc/pilot/arrayData.json")
             .then(({ data }) => {
-                console.log('aaaaaa',data)
+                //console.log('aaaaaa',data)
                 this.setState({
                     ItemList: data
                 });
             })
             .catch(e => {  // API 호출이 실패한 경우
-                console.error(e);  // 에러표시
+                //console.error(e);  // 에러표시
             });
     };
     componentDidMount() {

@@ -2,29 +2,65 @@ import React, {Component} from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+import styled from "styled-components";
+
+
+const Picture = styled.div`
+  height:690px;
+  width:100%;
+  background-position:center;
+  background-size:cover
+`;
 
 
 class VisualSlide extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            SlideList: []
+        }
+    }
+    loadSlide () {
+        axios
+            .get("https://english.yanadoocdn.com/upload/yanadoo/pc/pilot/arrayData.json")
+            .then(({data}) => {
+                //console.log('슬라이드 할 이미지 데이터 챙김?',data)
+                this.setState({
+                    SlideList: data
+                });
+            })
+            .catch(e => {
+                //console.log('못챙김',e);
+            })
+    };
+    componentDidMount() {
+        this.loadSlide();
+    }
     render() {
+        const {SlideList} = this.state;
+        console.log(SlideList)
+
         const settings = {
             dots:true,
-            fade: true,
+            //fade: true,
             infinite: true,
-            swipeToSlide: true,
-            afterChange: function (index) {
-                console.log(
-                    `Slider Changed to: ${index + 1}`
-                );
-            }
         };
         return (
             <div className="visual-col">
                 <Slider {...settings}>
-                    <div><img src="https://english.yanadoocdn.com/upload/2021/02/Bigbanner_pc_1614131588071.jpg" alt=""/></div>
-                    <div><img src="https://english.yanadoocdn.com/upload/2021/01/pc_1611134775738.jpg" alt=""/></div>
-                    <div><img src="https://english.yanadoocdn.com/upload/2021/03/3_audio_Bigbanner_pc_crop_1617181015048.png" alt=""/></div>
-                    <div><img src="https://english.yanadoocdn.com/upload/2021/03/210318_big_PC_1616144528399.jpg" alt=""/></div>
-                    <div><img src="https://english.yanadoocdn.com/upload/2020/12/3_Bigbanner_pc_ebebeb_1609217271367.jpg" alt=""/></div>
+                        {SlideList && SlideList.length > 0 && (
+                            SlideList.map((item,idx) => {
+                                console.log(item)
+                                return (
+                                    <div key={idx}>
+                                        <a href={item.link} target="_blank">
+                                            <Picture style={{backgroundImage: `url(` + item.picture + `)`}} />
+                                        </a>
+                                    </div>
+                                )
+                            })
+                        )}
                 </Slider>
             </div>
         );
