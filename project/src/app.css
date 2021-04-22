@@ -15,9 +15,9 @@ header.header-col{width:100%; background-color:#fff; box-sizing:border-box;}
 .header-col .inner-col{display:flex; align-items:center; width:1020px; margin:0 auto; box-sizing:border-box;}
 .logo{display:inline-block; box-sizing:border-box;}
 .logo a{color:#000;}
-nav.nav-box{display:inline-block; position:relative; width:50%; height:50px; margin-left:11em; font-size:110%; box-sizing:border-box;}
+nav.nav-box{display:inline-block; width:50%; height:50px; margin-left:11em; font-size:110%; box-sizing:border-box;}
 .nav-box ul{display:table; table-layout:fixed; width:100%;}
-.nav-box li{display:table-cell; list-style:none; position:relative; text-align:center;}
+.nav-box li{display:table-cell; list-style:none; text-align:center;}
 .nav-box li a{display:block; height:50px; padding:.73em 0; color:#000; box-sizing:border-box;}
 .nav-box li.active a{border-bottom:4px solid #258bf7;}
 .login-member-col{display:inline-block; margin-left:4em; box-sizing:border-box;}
@@ -31,9 +31,11 @@ nav.nav-box{display:inline-block; position:relative; width:50%; height:50px; mar
 .sub-nav ul{width:1020px; margin:0 auto; text-align:center;}
 .sub-nav li a{color:#000;} */
 
-.sub-list{display:none;}
-.sub-list.active{display:block; position:absolute; top:3.1em; left:0; width:100%; padding:1em 0 2em; background-color:#fff; text-align:center;}
-.sub-list li a{color:#000;}
+.nav-box .sub-list{display:none;}
+.sub-list.active{display:block; position:absolute; top:2.8em; left:0; width:100%; padding:1em 0 2em; background-color:#fff; text-align:center;}
+.nav-box .sub-list li a{color:#000;}
+.nav-box .sub-nav-box{display:none; background-color:#fff;}
+.nav-box .sub-nav-box.active{display:block;}
 
 .main-visual-col{display:block; width:100%; height:300px; background:url(https://wanted-marketing-image.s3.ap-northeast-2.amazonaws.com/service_introduction/event_list_banner/Global_Web_Event_Banner_A_20210215.jpg) no-repeat 50% 0; text-indent:-9999px;}
 .main-visual-col .inner-col{display:block; width:100%; height:100%;}

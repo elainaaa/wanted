@@ -5,12 +5,44 @@ class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            menu1: false,
-            menu2: false,
-            menu3: false,
-            menu4: false,
+            navHover: false,
+            navList: [
+                {
+                    id: 1,
+                    mainNav: 'All jobs',
+                    subNav: [
+                        'All jobs 1', 'All jobs 2', 'All jobs 3'
+                    ]
+                },
+                {
+                    id: 2,
+                    mainNav: 'Events',
+                    subNav: [
+                        'Events 1', 'Events 2', 'Events 3'
+                    ]
+                },
+                {
+                    id: 3,
+                    mainNav: 'Resume',
+                    subNav: [
+                        'Resume 1', 'Resume 2', 'Resume 3'
+                    ]
+                },
+                {
+                    id: 4,
+                    mainNav: 'MatchUp',
+                    subNav: [
+                        'MatchUp 1', 'MatchUp 2', 'MatchUp 3'
+                    ]
+                }
+            ]
         }
     }
+
+    // handleTest = habit => {
+    //     // const test = this.state.navList.filter(item => item.id !== habit.id);
+    //     console.log(habit.currentTarget.id);
+    // }
 
     render() {
 
@@ -18,21 +50,27 @@ class Nav extends Component {
             <>
             <nav className="nav-box">
                 <ul>
-                    <li className={this.state.menu1 ? "nav-list active" : "nav-list"}><a href="#"
-                     onMouseOver={()=> {this.setState({menu1: true});}} 
-                    onMouseLeave={()=> {this.setState({menu1: false});}}>All Jobs</a></li>
-                    <li className={this.state.menu2 ? "nav-list active" : "nav-list"}><a href="#"
-                     onMouseOver={()=> {this.setState({menu2: true});}} 
-                    onMouseLeave={()=> {this.setState({menu2: false});}}>Events</a></li>
-                    <li className={this.state.menu3 ? "nav-list active" : "nav-list"}><a href="#"
-                     onMouseOver={()=> {this.setState({menu3: true});}} 
-                    onMouseLeave={()=> {this.setState({menu3: false});}}>Resume</a></li>
-                    <li className={this.state.menu4 ? "nav-list active" : "nav-list"}><a href="#"
-                     onMouseOver={()=> {this.setState({menu4: true});}} 
-                    onMouseLeave={()=> {this.setState({menu4: false});}}>MathUp</a></li>
+                    {
+                        this.state.navList.map(navlist => (
+                            <li key={navlist.id} onMouseEnter={() => {this.setState({navHover: true})}} onMouseLeave={() => {this.setState({navHover: false})}}>
+                                <a href="#">{navlist.mainNav}</a>
+                                    <ul className={this.state.navHover ? 'sub-list active' : 'sub-list'}>
+                                    {
+                                        navlist.subNav.map((sublist, idx) => (
+                                            <li key={idx}>
+                                                <a href="#">{sublist}</a>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                                
+                            </li>
+                        ))
+                    }
                 </ul>
+
             </nav>
-                <SubNav subNav={this.state} />
+                {/* <SubNav subNav={this.state} /> */}
             </>
         );
     }
