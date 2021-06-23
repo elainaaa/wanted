@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from './login';
+import Login from './Login';
 import Nav from './nav';
 import headerLogo from '../../static/img_header_logo.png';
 
