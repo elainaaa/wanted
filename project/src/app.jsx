@@ -1,26 +1,25 @@
-import React, {Component} from 'react';
-import Header from './components/common/header';
-import Visual from './components/contents/visual';
-import VisualSlide from './components/contents/visualSlide';
-import Category from "./components/contents/category";
-import CardWrap from "./components/contents/cardWrap";
-import Footer from './components/common/footer';
+import React, { Component } from 'react';
+import Header from './components/common/Header';
+import Visual from './components/contents/Visual';
+import VisualSlide from './components/contents/VisualSlide';
+import Category from './components/contents/Category';
+import CardWrap from './components/contents/CardWrap';
+import Footer from './components/common/Footer';
 
 import './app.css';
 class App extends Component {
-    render() {
-        return (
-        <>
-            <Header />
-            <Visual />
-            <VisualSlide />
-            <Category />
-            <CardWrap />
-            <Footer />
-        </>
-      );
-    }
+  render() {
+    return (
+      <>
+        <Header />
+        <Visual />
+        <VisualSlide />
+        <Category />
+        <CardWrap />
+        <Footer />
+      </>
+    );
+  }
 }
-
 
 export default App;
